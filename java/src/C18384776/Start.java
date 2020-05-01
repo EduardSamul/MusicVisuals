@@ -25,6 +25,9 @@ public class Start extends Visual{
             case 0:
                 drawCircleMoving();
                 break;
+            case 1:
+                drawLinesMoving();
+                break;
         }
 
     }
@@ -39,7 +42,10 @@ public class Start extends Visual{
         
         switch(key){
             case '0':
-                drawCircleMoving();
+                menu = 0;
+                break;
+            case '1':
+                menu = 1;
                 break;
         }
     }
@@ -69,5 +75,41 @@ public class Start extends Visual{
         }
 
         circle(sideways, UpDown, 200);
+    }
+
+    float v;
+    // Number of trailing lines
+    int NumOfLines = 15;
+    public void drawLinesMoving(){
+        stroke(255);
+        strokeWeight(5);
+        background(40);
+
+        // Translate to the center point of window.
+        translate(width/2, height/2);
+
+        for(int i = 0 ; i < NumOfLines ; i++)
+        {
+            line(x1(v + i), y1(v + i), x2(v + i), y2(v + i));
+        }
+        v++;
+
+    }
+
+    // Change values to get new designs :)
+    float x1(float v) {
+        return sin(v / 10) * 100 + sin(v / 15) * 70;
+    }
+
+    float y1(float v) {
+        return cos(-v / 80) * 400 + cos(v / 20) * 30;
+    }
+
+    float x2(float v) {
+        return sin(v / 10) * 200 + sin(v) * 2;
+    }
+
+    float y2(float v) {
+        return cos(v / 15) * 160 + cos(v / 20) * 50;
     }
 }
