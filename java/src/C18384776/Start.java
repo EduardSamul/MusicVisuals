@@ -28,6 +28,9 @@ public class Start extends Visual{
             case 1:
                 drawLinesMoving();
                 break;
+            case 2:
+                drawShapes();
+                break;
         }
 
     }
@@ -46,6 +49,9 @@ public class Start extends Visual{
                 break;
             case '1':
                 menu = 1;
+                break;
+            case '2':
+                menu = 2;
                 break;
         }
     }
@@ -82,7 +88,7 @@ public class Start extends Visual{
     int NumOfLines = 15;
     public void drawLinesMoving(){
         stroke(255);
-        strokeWeight(5);
+        strokeWeight(3);
         background(40);
 
         // Translate to the center point of window.
@@ -111,5 +117,59 @@ public class Start extends Visual{
 
     float y2(float v) {
         return cos(v / 15) * 160 + cos(v / 20) * 50;
+    }
+
+
+    int circGoingAccross = 0;
+    int rectColour = 0;
+    int circColour = 100;
+    int triangColour = 200;
+    public void drawShapes() {
+        calculateAverageAmplitude();
+        float Recta = 200 + (getAmplitude() * 300);
+        float triang = getAmplitude() * 300;
+        float circ = getAmplitude() * 300;
+		background(0);
+        stroke(255);
+        noStroke();
+
+        // Check if rectangle colour out of bounds.
+        if (rectColour > 255)
+        {
+            rectColour = 0;
+        }
+
+        // Check if circle colour out of bounds.
+        if (circColour > 255)
+        {
+            circColour = 0;
+        }
+
+        // Check if triangle colour out of bounds.
+        if (triangColour > 255)
+        {
+            triangColour = 0;
+        }
+        // Top Left Rect.
+        fill(rectColour, 100, 100);
+        rect(width-width, height-width, Recta, Recta);  // tlx, tly, w, h
+        rectColour += 5;
+
+        // Bottom Right Rect.
+        rect(width-Recta, height-Recta, Recta, Recta);
+
+        // Triangle
+        fill(triangColour, 100, 100);
+        triangle(width-800-triang, height-100+triang, width-700, height-300-triang, width-600+triang, height-100+triang);
+        triangColour += 5;
+
+        // Circle
+        fill(circColour, 100, 100);
+        circle(width-200, height-800, 200+circ);
+        circColour += 5;
+
+        // Circle going across screen.
+        circle(circGoingAccross % width, height/2, 200+circ);
+        circGoingAccross += 10;
     }
 }
