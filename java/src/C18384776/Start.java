@@ -66,12 +66,18 @@ public class Start extends Visual{
         
         switch(key){
             case '0':
+                // Camera reset : Is needed if CubesAndSphere.java gets played.
+                camera();   
                 menu = 0;
                 break;
             case '1':
+                // Camera reset : Is needed if CubesAndSphere.java gets played.
+                camera();
                 menu = 1;
                 break;
             case '2':
+                // Camera reset : Is needed if CubesAndSphere.java gets played.
+                camera();
                 menu = 2;
                 break;
             case '3':
