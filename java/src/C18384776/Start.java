@@ -7,6 +7,7 @@ public class Start extends Visual{
     LinesMoving lm;
     SquaresCircleTriangle CandS;
     CircleScreensaver circScr;
+    CubesAndSphere cubandSphr;
     
     public void settings()
     {
@@ -24,6 +25,7 @@ public class Start extends Visual{
         lm = new LinesMoving(this);
         CandS = new SquaresCircleTriangle(this);
         circScr = new CircleScreensaver(this);
+        cubandSphr = new CubesAndSphere(this);
     }
 
     public void draw()
@@ -41,7 +43,7 @@ public class Start extends Visual{
                 CandS.render();
                 break;
             case 3:
-                
+                cubandSphr.render();
                 break;
         }
 

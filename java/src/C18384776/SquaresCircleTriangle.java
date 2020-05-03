@@ -18,7 +18,7 @@ public class SquaresCircleTriangle {
         float Recta = 200 + (mv.getAmplitude() * 300);
         float triang = mv.getAmplitude() * 300;
         float circ = mv.getAmplitude() * 300;
-        mv.background(0);
+        mv.background(40);
         mv.stroke(255);
         mv.noStroke();
     

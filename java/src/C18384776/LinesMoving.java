@@ -13,9 +13,9 @@ public class LinesMoving {
     float v;
     int NumOfLines = 15;
     public void render() {
-        mv.stroke(255);
+        mv.stroke(mv.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
         mv.strokeWeight(3);
-        mv.background(40);
+        mv.background(0);
 
         // Translate to the center point of window.
         mv.translate(mv.width/2, mv.height/2);
