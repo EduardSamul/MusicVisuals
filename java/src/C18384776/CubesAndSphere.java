@@ -1,10 +1,11 @@
 package C18384776;
 
+import processing.core.PApplet;
+
 public class CubesAndSphere {
     Start mv;
 
-    public CubesAndSphere(Start mv)
-    {
+    public CubesAndSphere(Start mv) {
         this.mv = mv;
     }
 
@@ -16,13 +17,13 @@ public class CubesAndSphere {
         mv.background(0);
         mv.noFill();
         mv.lights();
-        mv.stroke(mv.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+        mv.stroke(PApplet.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
         mv.camera(0, 0, 0, 0, 0, -1, 0, 1, 0);
         mv.translate(0, 0, -250);
         float boxSize = 50 + (mv.getAmplitude() * 500);
-        smoothedBoxSize = mv.lerp(smoothedBoxSize, boxSize, 0.2f);
+        smoothedBoxSize = PApplet.lerp(smoothedBoxSize, boxSize, 0.2f);
 
-        if (duration >= 500)
+        if (duration >= 200)
         {
             mv.pushMatrix();
             mv.translate(-100, 100, 0);
@@ -73,5 +74,6 @@ public class CubesAndSphere {
         }
         angle += 0.01f;
         duration++;
+
     }
 }

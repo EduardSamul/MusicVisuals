@@ -13,7 +13,7 @@ public class LinesMoving {
     float v;
     int NumOfLines = 15;
     public void render() {
-        mv.stroke(mv.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
+        mv.stroke(PApplet.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
         mv.strokeWeight(3);
         mv.background(0);
 
@@ -28,18 +28,18 @@ public class LinesMoving {
     }
 
     float x1(float v) {
-        return PApplet.sin(v / 10) * 100 + PApplet.sin(v / 15) * 70;
+        return PApplet.sin(v / 10) * mv.getSmoothedAmplitude() + PApplet.sin(v / 15) * 70;
     }
 
     float y1(float v) {
-        return PApplet.cos(-v / 80) * 400 + PApplet.cos(v / 20) * 30;
+        return PApplet.cos(-v / 80) * 400 + PApplet.cos(v / 20) * mv.getSmoothedAmplitude();
     }
 
     float x2(float v) {
-        return PApplet.sin(v / 10) * 200 + PApplet.sin(v) * 2;
+        return PApplet.sin(v / 10) * 200 + PApplet.sin(v) * mv.getSmoothedAmplitude();
     }
 
     float y2(float v) {
-        return PApplet.cos(v / 15) * 160 + PApplet.cos(v / 20) * 50;
+        return PApplet.cos(v / 15) * mv.getSmoothedAmplitude() + PApplet.cos(v / 20) * 50;
     }
 }

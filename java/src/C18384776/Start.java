@@ -31,6 +31,7 @@ public class Start extends Visual{
     public void draw()
     {
         calculateAverageAmplitude();
+        calculateFrequencyBands();
 
         switch(menu) {
             case 0:
@@ -56,6 +57,12 @@ public class Start extends Visual{
             getAudioPlayer().cue(0);
             getAudioPlayer().play();
         }       
+    
+        if (key == 'p')
+        {
+            getAudioPlayer().cue(0);
+            getAudioPlayer().pause();
+        }  
         
         switch(key){
             case '0':

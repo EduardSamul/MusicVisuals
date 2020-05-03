@@ -1,5 +1,6 @@
 package C18384776;
 
+import processing.core.PApplet;
 
 public class SquaresCircleTriangle {
     Start mv;
@@ -9,7 +10,6 @@ public class SquaresCircleTriangle {
         this.mv = mv;
     }
 
-    int circGoingAccross = 0;
     int rectColour = 0;
     int circColour = 100;
     int triangColour = 200;
@@ -58,8 +58,12 @@ public class SquaresCircleTriangle {
         circColour += 5;
     
         // Circle going across screen.
-        mv.circle(circGoingAccross % mv.width, mv.height/2, 200+circ);
-        circGoingAccross += 10;
+        movement = movement + 0.05f;
+        float x = mv.noise(movement);
+        x = PApplet.map(x, 0, 1, 0, mv.width);
+        mv.circle(x, mv.height/2, 200+circ);
+
     }
+    float movement = 0;
 
 }
