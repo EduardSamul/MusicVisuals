@@ -28,18 +28,18 @@ public class LinesMoving {
     }
 
     float x1(float v) {
-        return PApplet.sin(v / 10) * mv.getSmoothedAmplitude() + PApplet.sin(v / 15) * 70;
+        return PApplet.sin(v / 10) * (mv.getSmoothedAmplitude() * 1500) + PApplet.sin(v / 15) * 70;
     }
 
     float y1(float v) {
-        return PApplet.cos(-v / 80) * 400 + PApplet.cos(v / 20) * mv.getSmoothedAmplitude();
+        return PApplet.cos(-v / 80) * (mv.getSmoothedAmplitude() * 1500) + PApplet.cos(v / 20) * mv.getSmoothedAmplitude();
     }
 
     float x2(float v) {
-        return PApplet.sin(v / 10) * 200 + PApplet.sin(v) * mv.getSmoothedAmplitude();
+        return PApplet.sin(v / 10) * (mv.getSmoothedAmplitude() * 1500) + PApplet.sin(v) * mv.getSmoothedAmplitude();
     }
 
     float y2(float v) {
-        return PApplet.cos(v / 15) * mv.getSmoothedAmplitude() + PApplet.cos(v / 20) * 50;
+        return PApplet.cos(v / 15) * (mv.getSmoothedAmplitude() * 1500) + PApplet.cos(v / 20) * 50;
     }
 }

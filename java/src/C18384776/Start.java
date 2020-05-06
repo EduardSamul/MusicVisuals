@@ -4,10 +4,12 @@ import ie.tudublin.Visual;
 
 public class Start extends Visual{
     int menu = 0;
+
     LinesMoving lm;
     SquaresCircleTriangle CandS;
     CircleScreensaver circScr;
     CubesAndSphere cubandSphr;
+    Wave wv;
     
     public void settings()
     {
@@ -26,6 +28,7 @@ public class Start extends Visual{
         CandS = new SquaresCircleTriangle(this);
         circScr = new CircleScreensaver(this);
         cubandSphr = new CubesAndSphere(this);
+        wv = new Wave(this);
     }
 
     public void draw()
@@ -45,6 +48,9 @@ public class Start extends Visual{
                 break;
             case 3:
                 cubandSphr.render();
+                break;
+            case 4:
+                wv.render();
                 break;
         }
 
@@ -82,6 +88,11 @@ public class Start extends Visual{
                 break;
             case '3':
                 menu = 3;
+                break;
+            case '4':
+                // Camera reset : Is needed if CubesAndSphere.java gets played.
+                camera();
+                menu = 4;
                 break;
         }
     }
