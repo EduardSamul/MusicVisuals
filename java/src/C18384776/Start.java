@@ -4,6 +4,7 @@ import ie.tudublin.Visual;
 
 public class Start extends Visual{
     int menu = 0;
+    double duration = 0;
 
     LinesMoving lm;
     SquaresCircleTriangle CandS;
@@ -54,6 +55,35 @@ public class Start extends Visual{
                 break;
         }
 
+        duration++;
+
+        if (duration < 400)
+        {
+            menu = 0;
+        }
+        else if (duration < 800)
+        {
+            menu = 1;
+        }
+        else if (duration < 1200)
+        {
+            menu = 2;
+        }
+        else if (duration < 1600)
+        {
+            menu = 3;
+        }
+        else if (duration < 2000)
+        {
+            // Camera reset : Is needed when CubesAndSphere.java gets played.
+            camera();
+            menu = 4;
+        }
+        else if (duration == 2400)
+        {
+            duration = 0;
+        }
+
     }
 
     public void keyPressed()
@@ -69,31 +99,5 @@ public class Start extends Visual{
             getAudioPlayer().cue(0);
             getAudioPlayer().pause();
         }  
-        
-        switch(key){
-            case '0':
-                // Camera reset : Is needed if CubesAndSphere.java gets played.
-                camera();   
-                menu = 0;
-                break;
-            case '1':
-                // Camera reset : Is needed if CubesAndSphere.java gets played.
-                camera();
-                menu = 1;
-                break;
-            case '2':
-                // Camera reset : Is needed if CubesAndSphere.java gets played.
-                camera();
-                menu = 2;
-                break;
-            case '3':
-                menu = 3;
-                break;
-            case '4':
-                // Camera reset : Is needed if CubesAndSphere.java gets played.
-                camera();
-                menu = 4;
-                break;
-        }
     }
 }
