@@ -95,4 +95,5 @@ The user is expected to press space to start playing the music or 'p' to stop.
 # What I am most proud of in the assignment
 
 # Video
-[![Vimeo link](https://vimeo.com/417818769)
+Video can be found [here](https://vimeo.com/417818769).
+
