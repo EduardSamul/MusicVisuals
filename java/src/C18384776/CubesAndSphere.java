@@ -73,7 +73,7 @@ public class CubesAndSphere {
             mv.strokeWeight(5);
             mv.box(smoothedBoxSize);
         }
-        angle += 0.05f;
+        angle += 0.02f;
         duration++;
 
     }

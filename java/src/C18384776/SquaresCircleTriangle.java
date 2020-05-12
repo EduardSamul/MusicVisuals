@@ -44,7 +44,7 @@ public class SquaresCircleTriangle {
 
         // Top Left Rect.
         mv.fill(rectColour, 100, 100);
-        mv.rect(mv.width-mv.width, mv.height-mv.width, Recta, Recta);
+        mv.rect(mv.width-mv.width, mv.height-mv.height, Recta, Recta);
         rectColour += 5;
     
         // Bottom Right Rect.
