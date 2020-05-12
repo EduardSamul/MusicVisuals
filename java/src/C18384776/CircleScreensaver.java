@@ -8,11 +8,13 @@ public class CircleScreensaver {
         this.mv = mv;
     }
 
+    // Settings for moving circle.
     float sideways = 500;
     float UpDown = 500;
     float speedForX = 30;
     float speedForY = 45;
 
+    // Render moving circle.
     public void render() {
         mv.noStroke();
         mv.fill(mv.random(255), mv.random(255), mv.random(255));

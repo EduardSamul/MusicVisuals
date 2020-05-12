@@ -11,15 +11,20 @@ public class LinesMoving {
     }
 
     float v;
+
+    // Change this to change amount of lines present on screen.
     int NumOfLines = 15;
+
+    // Renders lines.
     public void render() {
         mv.stroke(PApplet.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
         mv.strokeWeight(3);
-        mv.background(0);
+        mv.background(40);
 
         // Translate to the center point of window.
         mv.translate(mv.width/2, mv.height/2);
 
+        // Draws moving line.
         for(int i = 0 ; i < NumOfLines ; i++)
         {
             mv.line(x1(v + i), y1(v + i), x2(v + i), y2(v + i));

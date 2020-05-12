@@ -10,10 +10,12 @@ public class SquaresCircleTriangle {
         this.mv = mv;
     }
 
+    // Colours of shapes.
     int rectColour = 0;
     int circColour = 100;
     int triangColour = 200;
 
+    // Renders shapes.
     public void render() {
         float Recta = 200 + (mv.getAmplitude() * 300);
         float triang = mv.getAmplitude() * 300;
@@ -39,9 +41,10 @@ public class SquaresCircleTriangle {
         {
             triangColour = 0;
         }
+
         // Top Left Rect.
         mv.fill(rectColour, 100, 100);
-        mv.rect(mv.width-mv.width, mv.height-mv.width, Recta, Recta);  // tlx, tly, w, h
+        mv.rect(mv.width-mv.width, mv.height-mv.width, Recta, Recta);
         rectColour += 5;
     
         // Bottom Right Rect.

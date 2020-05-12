@@ -12,11 +12,13 @@ public class Start extends Visual{
     CubesAndSphere cubandSphr;
     Wave wv;
     
+    // Settings of window
     public void settings()
     {
         size(1000, 1000, P3D);
     }
 
+    // Setup that gets ran once.
     public void setup()
     {
         colorMode(HSB);
@@ -32,11 +34,13 @@ public class Start extends Visual{
         wv = new Wave(this);
     }
 
+    // Draw that keeps getting run.
     public void draw()
     {
         calculateAverageAmplitude();
         calculateFrequencyBands();
 
+        // How visuals get displayed.
         switch(menu) {
             case 0:
                 circScr.render();
@@ -55,8 +59,10 @@ public class Start extends Visual{
                 break;
         }
 
+        // Timer to switch between visuals.
         duration++;
 
+        // The amount of time each visual gets allocated.
         if (duration < 400)
         {
             menu = 0;
@@ -86,6 +92,8 @@ public class Start extends Visual{
 
     }
 
+    // If spacebar is pressed play sound.
+    // If 'p' is pressed stop sound.
     public void keyPressed()
     {
         if (key == ' ')
@@ -96,7 +104,6 @@ public class Start extends Visual{
     
         if (key == 'p')
         {
-            getAudioPlayer().cue(0);
             getAudioPlayer().pause();
         }  
     }

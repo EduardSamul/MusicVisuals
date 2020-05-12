@@ -23,6 +23,7 @@ public class CubesAndSphere {
         float boxSize = 50 + (mv.getAmplitude() * 500);
         smoothedBoxSize = PApplet.lerp(smoothedBoxSize, boxSize, 0.2f);
 
+        // If time is >= 200 display four cubes to each corner with a sphere in the middle.
         if (duration >= 200)
         {
             mv.pushMatrix();
@@ -65,14 +66,14 @@ public class CubesAndSphere {
             mv.sphere(smoothedBoxSize);
             mv.popMatrix(); 
         }
-        else
+        else    // A single cube at the middle of the screen.
         {
             mv.rotateY(angle);
             mv.rotateX(angle);         
             mv.strokeWeight(5);
             mv.box(smoothedBoxSize);
         }
-        angle += 0.01f;
+        angle += 0.05f;
         duration++;
 
     }

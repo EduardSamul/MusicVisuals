@@ -12,12 +12,14 @@ public class Wave {
         cy = this.mv.height / 2;
     }
 
+    // Renders visual.
     public void render()
     {
         mv.background(40);
         mv.colorMode(PApplet.HSB);
         mv.strokeWeight(1);
 
+        // Wave form.
         for(int i = 0 ; i < mv.getAudioBuffer().size() ; i ++)
         {
             mv.stroke(
@@ -29,6 +31,7 @@ public class Wave {
             mv.line(i * 3, cy, i * 4, cy + cy * mv.getAudioBuffer().get(i));
         }
 
+        // Flashy Horizontal dots that are displayed at the top and bottom of the screen.
         for(int i = 0 ; i < 10 ; i++ )
         {
             mv.stroke(mv.random(255), mv.random(255), mv.random(255));
