@@ -93,6 +93,12 @@ The visuals will switch automatically after a period of time.
 The user is expected to press space to start playing the music or 'p' to stop.
 
 # What I am most proud of in the assignment
+Some things that I am proud of in this assignment are : 
+- Making shapes react to sound.
+- Learning markdown.
+- Coming up with how each visual will look.
+- Enjoyed using Processing in Java to make visuals appear on screen.
+- Using inheritance to take code from other java files.
 
 # Video
 Video can be found [here](https://vimeo.com/417818769).

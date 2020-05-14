@@ -14,7 +14,7 @@ public class CubesAndSphere {
     float smoothedBoxSize = 0;
 
     public void render() {
-        mv.background(0);
+        mv.background(40);
         mv.noFill();
         mv.lights();
         mv.stroke(PApplet.map(mv.getSmoothedAmplitude(), 0, 1, 0, 255), 255, 255);
